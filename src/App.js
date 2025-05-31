@@ -289,7 +289,7 @@ const App = () => {
             </div>
             <div className="w-48 h-48 rounded-[1000px] overflow-hidden flex-shrink-0">
               <img 
-                src="/images/profile.jpg" 
+                src="/public/images/profile.jpg" 
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
@@ -321,7 +321,7 @@ const App = () => {
             </div>
             <div className="w-48 h-48 rounded-[1000px] overflow-hidden flex-shrink-0">
               <img 
-                src="/images/profile.jpg" 
+                src={process.env.PUBLIC_URL + "/images/schools/profile.jpg"} 
                 alt="Profile"
                 className="w-full h-full object-cover"
               />

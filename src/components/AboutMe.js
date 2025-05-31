@@ -53,7 +53,7 @@ const AboutMe = () => {
               <div className="flex items-start gap-4">
                 <div className="w-16 h-16 bg-white/10 rounded-lg overflow-hidden flex-shrink-0">
                   <img 
-                    src="/images/schools/plv-logo.png" 
+                    src={process.env.PUBLIC_URL + "/images/schools/plv-logo.png"} 
                     alt="PLV Logo"
                     className="w-full h-full object-contain p-2"
                   />
@@ -72,7 +72,7 @@ const AboutMe = () => {
               <div className="flex items-start gap-4">
                 <div className="w-16 h-16 bg-white/10 rounded-lg overflow-hidden flex-shrink-0">
                   <img 
-                    src="/images/schools/plv-logo.png" 
+                    src={process.env.PUBLIC_URL + "/images/schools/plv-logo.png"} 
                     alt="PLV Logo"
                     className="w-full h-full object-contain p-2"
                   />
@@ -92,7 +92,7 @@ const AboutMe = () => {
               <div className="flex items-start gap-4">
                 <div className="w-16 h-16 bg-white/10 rounded-lg overflow-hidden flex-shrink-0">
                   <img 
-                    src="/images/schools/cenhs-logo.png" 
+                    src={process.env.PUBLIC_URL + "/images/schools/cenhs-logo.png"} 
                     alt="CENHS Logo"
                     className="w-full h-full object-contain p-2"
                   />
@@ -111,7 +111,7 @@ const AboutMe = () => {
               <div className="flex items-start gap-4">
                 <div className="w-16 h-16 bg-white/10 rounded-lg overflow-hidden flex-shrink-0">
                   <img 
-                    src="/images/schools/bes-logo.png" 
+                    src={process.env.PUBLIC_URL + "/images/schools/bes-logo.png"} 
                     alt="BES Logo"
                     className="w-full h-full object-contain p-2"
                   />
