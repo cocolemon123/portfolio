@@ -5,7 +5,7 @@ const Projects = () => {
     {
       title: 'EcoRide Parada',
       description: 'A comprehensive bike-renting system with mobile app for users and web dashboard for administrators, promoting eco-friendly transportation in the community.',
-      image: '/images/projects/ecoride-placeholder.png', // TODO: Replace with actual image
+      image: process.env.PUBLIC_URL + '/images/projects/ecoride-placeholder.png', // TODO: Replace with actual image
       longDescription: `An innovative bike-sharing platform that combines mobile and web technologies 
         to create a seamless renting experience. The system features QR-based authentication, 
         real-time admin notifications, and comprehensive ride tracking including distance, carbon 
@@ -46,7 +46,7 @@ const Projects = () => {
     {
       title: 'PLV Lost & Found',
       description: 'A web application designed to help students and staff at Pamantasan ng Lungsod ng Valenzuela locate and manage lost items within the university campus.',
-      image: '/images/projects/plvlostandfound.png',
+      image: process.env.PUBLIC_URL + '/images/projects/plvlostandfound.png',
       longDescription: `An interactive lost and found platform that enables users to post found items
         and search for lost belongings. The system features real-time chat functionality using AJAX,
         allowing users to communicate directly about found items. This streamlines the process of
