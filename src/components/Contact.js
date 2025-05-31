@@ -105,8 +105,8 @@ const Contact = () => {
   };
 
   const handleDownloadCV = () => {
-    // TODO: Replace with actual CV download link
-    alert('CV will be available soon!');
+    const cvUrl = process.env.PUBLIC_URL + '/documents/frank-calumay-cv.pdf';
+    window.open(cvUrl, '_blank');
   };
 
   return (
