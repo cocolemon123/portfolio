@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { FaEnvelope, FaFileDownload } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
@@ -28,7 +29,6 @@ const Contact = () => {
   };
 
   const validateForm = () => {
-    // Email regex pattern
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     
     if (!emailPattern.test(formData.email)) {
@@ -39,8 +39,6 @@ const Contact = () => {
       });
       return false;
     }
-
-    // Prevent empty or short messages
     if (formData.message.length < 10) {
       setSubmitStatus({
         submitted: true,
@@ -49,14 +47,11 @@ const Contact = () => {
       });
       return false;
     }
-
     return true;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Check if enough time has passed since last submission
     const now = Date.now();
     if (now - lastSubmission < SUBMIT_COOLDOWN) {
       setSubmitStatus({
@@ -66,11 +61,9 @@ const Contact = () => {
       });
       return;
     }
-
     if (!validateForm()) {
       return;
     }
-
     try {
       await emailjs.sendForm(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -78,22 +71,18 @@ const Contact = () => {
         form.current,
         process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       );
-
       setLastSubmission(now);
       setSubmitStatus({
         submitted: true,
         success: true,
         message: 'Thank you for your message! I will get back to you soon.'
       });
-
-      // Clear form
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       });
-
     } catch (error) {
       console.error('Error:', error);
       setSubmitStatus({
@@ -111,15 +100,28 @@ const Contact = () => {
 
   return (
     <section id="contact" className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 pt-24">
-      <div className="max-w-4xl w-full">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="max-w-4xl w-full"
+      >
         <h2 className="text-[#F2F4CB] text-5xl font-light mb-12">
           get in <span className="font-bold">touch</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <div className="bg-[#110B11]/50 rounded-xl p-6 border border-[#B7990D]/20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-[#110B11]/50 rounded-xl p-6 border border-[#B7990D]/20"
+          >
             <form ref={form} onSubmit={handleSubmit} className="space-y-4">
+              {/* Name Input */}
               <div>
                 <label htmlFor="name" className="block text-[#F2F4CB] mb-2">Name</label>
                 <input
@@ -132,7 +134,8 @@ const Contact = () => {
                   className="w-full px-4 py-2 bg-[#110B11] border border-[#B7990D]/20 rounded-lg text-[#F2F4CB] focus:outline-none focus:border-[#B7990D]"
                 />
               </div>
-
+              
+              {/* Email Input */}
               <div>
                 <label htmlFor="email" className="block text-[#F2F4CB] mb-2">Email</label>
                 <input
@@ -145,7 +148,8 @@ const Contact = () => {
                   className="w-full px-4 py-2 bg-[#110B11] border border-[#B7990D]/20 rounded-lg text-[#F2F4CB] focus:outline-none focus:border-[#B7990D]"
                 />
               </div>
-
+              
+              {/* Subject Input */}
               <div>
                 <label htmlFor="subject" className="block text-[#F2F4CB] mb-2">Subject</label>
                 <input
@@ -158,7 +162,8 @@ const Contact = () => {
                   className="w-full px-4 py-2 bg-[#110B11] border border-[#B7990D]/20 rounded-lg text-[#F2F4CB] focus:outline-none focus:border-[#B7990D]"
                 />
               </div>
-
+              
+              {/* Message Input */}
               <div>
                 <label htmlFor="message" className="block text-[#F2F4CB] mb-2">Message</label>
                 <textarea
@@ -172,6 +177,7 @@ const Contact = () => {
                 ></textarea>
               </div>
 
+              {/* Send Message Button */}
               <button
                 type="submit"
                 className="w-full bg-[#B7990D] text-[#110B11] py-2 px-4 rounded-lg font-semibold hover:bg-[#B7990D]/90 transition-colors flex items-center justify-center gap-2"
@@ -186,11 +192,23 @@ const Contact = () => {
                 </div>
               )}
             </form>
-          </div>
+          </motion.div>
 
           {/* Contact Info & CV Download */}
-          <div className="space-y-6">
-            <div className="bg-[#110B11]/50 rounded-xl p-6 border border-[#B7990D]/20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="space-y-6"
+          >
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="bg-[#110B11]/50 rounded-xl p-6 border border-[#B7990D]/20"
+            >
               <h3 className="text-[#F2F4CB] text-2xl font-bold mb-4">Contact Information</h3>
               <div className="space-y-4 text-gray-400">
                 <p>Feel free to reach out to me through the contact form or directly via email.</p>
@@ -209,11 +227,19 @@ const Contact = () => {
                   </a>
                 </div>
               </div>        
-            </div>
+            </motion.div>
 
-            <div className="bg-[#110B11]/50 rounded-xl p-6 border border-[#B7990D]/20">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="bg-[#110B11]/50 rounded-xl p-6 border border-[#B7990D]/20"
+            >
               <h3 className="text-[#F2F4CB] text-2xl font-bold mb-4">Download CV</h3>
-              <p className="text-gray-400 mb-4">Get a copy of my detailed curriculum vitae to learn more about my experience and skills.</p>
+              <p className="text-gray-400 mb-4">
+                Get a copy of my detailed curriculum vitae to learn more about my experience and skills.
+              </p>
               <button
                 onClick={handleDownloadCV}
                 className="w-full bg-[#B7990D] text-[#110B11] py-2 px-4 rounded-lg font-semibold hover:bg-[#B7990D]/90 transition-colors flex items-center justify-center gap-2"
@@ -221,10 +247,10 @@ const Contact = () => {
                 <FaFileDownload />
                 Download CV
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

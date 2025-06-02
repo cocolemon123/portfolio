@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Projects = () => {
   const projects = [
@@ -85,13 +86,26 @@ const Projects = () => {
 
   return (
     <section id="projects" className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 pt-24">
-      <div className="max-w-4xl w-full">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="max-w-4xl w-full"
+      >
         <h2 className="text-[#F2F4CB] text-5xl font-light mb-12">
           my <span className="font-bold">projects</span>
         </h2>
 
         {projects.map((project, index) => (
-          <div key={index} className="bg-[#110B11]/50 rounded-xl p-6 mb-12 border border-[#B7990D]/20">
+          <motion.div 
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 * index }}
+            className="bg-[#110B11]/50 rounded-xl p-6 mb-12 border border-[#B7990D]/20"
+          >
             <div className="flex flex-col md:flex-row gap-8">
               {/* Project Image */}
               <div className="w-full md:w-1/2">
@@ -140,9 +154,9 @@ const Projects = () => {
             <div className="mt-8">
               <p className="text-gray-400">{project.longDescription}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

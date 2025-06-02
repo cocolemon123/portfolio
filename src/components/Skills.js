@@ -9,6 +9,7 @@ import {
   SiFlutter, SiCanva, SiBlender, SiAdobephotoshop,
   SiAdobeillustrator
 } from 'react-icons/si';
+import { motion } from 'framer-motion';
 
 const Skills = () => {
   const skillCategories = [
@@ -89,14 +90,33 @@ const Skills = () => {
 
   return (
     <section id="skills" className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 pt-24">
-      <div className="max-w-4xl w-full">
-        <h2 className="text-[#F2F4CB] text-5xl font-light mb-12">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="max-w-4xl w-full"
+      >
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-[#F2F4CB] text-5xl font-light mb-12"
+        >
           my <span className="font-bold">skills</span>
-        </h2>
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-[#110B11]/50 rounded-xl p-6 border border-[#B7990D]/20">
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 * index }}
+              className="bg-[#110B11]/50 rounded-xl p-6 border border-[#B7990D]/20"
+            >
               <div className="flex items-center mb-6">
                 {category.icon}
                 <h3 className="text-[#F2F4CB] text-2xl font-bold ml-3">{category.title}</h3>
@@ -118,12 +138,17 @@ const Skills = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Soft Skills */}
-        <div className="mt-8 bg-[#110B11]/50 rounded-xl p-6 border border-[#B7990D]/20">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-8 bg-[#110B11]/50 rounded-xl p-6 border border-[#B7990D]/20"
+        >
           <h3 className="text-[#F2F4CB] text-2xl font-bold mb-6">Soft Skills</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
@@ -138,8 +163,8 @@ const Skills = () => {
               </div>
             ))}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
