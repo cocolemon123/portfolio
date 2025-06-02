@@ -20,10 +20,22 @@ const AboutMe = () => {
             
             <div className="text-gray-400 space-y-6">
               <p className="text-lg">
-                Hi, I'm Frank Calumay – a focused programmer turning ideas into efficient solutions.
+                Hi there, I'm Frank Calumay.
               </p>
+              
               <p className="text-lg">
-                I prioritize clarity, speed, and quality in every project. My work reflects a commitment to practical creativity.
+                I'm a problem solver who loves bringing ideas to life through coding. 
+                I call my approach vibe coding—I come up with the concepts, and I use AI 
+                to help make them a reality. While I have a good understanding of various 
+                programming languages, I focus more on creativity and efficiency rather 
+                than memorizing every detail. My goal is to produce results quickly 
+                without sacrificing quality.
+              </p>
+
+              <p className="text-lg">
+                I've worked on several projects that showcase my ability to turn ideas 
+                into real solutions. By relying on AI to handle the technical details, 
+                I can focus on the big picture and ensure that everything works smoothly.
               </p>
             </div>
           </div>
