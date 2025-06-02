@@ -1,6 +1,15 @@
+import { motion } from 'framer-motion';
+
 const AboutMe = () => {
-  return (    <section id="about" className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 pt-24">
-      <div className="max-w-4xl w-full">
+  return (
+    <section id="about" className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 pt-24">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="max-w-4xl w-full"
+      >
         {/* About Me Content */}
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 mb-16">
           {/* Content */}
@@ -11,22 +20,10 @@ const AboutMe = () => {
             
             <div className="text-gray-400 space-y-6">
               <p className="text-lg">
-                Hi there, I'm Frank Calumay.
+                Hi, I'm Frank Calumay – a focused programmer turning ideas into efficient solutions.
               </p>
-              
               <p className="text-lg">
-                I'm a problem solver who loves bringing ideas to life through coding. 
-                I call my approach vibe coding—I come up with the concepts, and I use AI 
-                to help make them a reality. While I have a good understanding of various 
-                programming languages, I focus more on creativity and efficiency rather 
-                than memorizing every detail. My goal is to produce results quickly 
-                without sacrificing quality.
-              </p>
-
-              <p className="text-lg">
-                I've worked on several projects that showcase my ability to turn ideas 
-                into real solutions. By relying on AI to handle the technical details, 
-                I can focus on the big picture and ensure that everything works smoothly.
+                I prioritize clarity, speed, and quality in every project. My work reflects a commitment to practical creativity.
               </p>
             </div>
           </div>
@@ -125,7 +122,7 @@ const AboutMe = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
