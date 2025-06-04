@@ -281,8 +281,7 @@ const App = () => {
                 <span className="text-[#F2F4CB]">Hi! I'm</span> <span className="text-[#F2F4CB] font-bold">Frank</span>
               </h1>
               <p className="text-gray-400 text-lg text-center mb-8">
-                not a graphic designer, not a professional,<br />
-                just a vibe programmer.
+                Aspiring IT professional seeking an internship.
               </p>
               
               {/* Social Links */}
@@ -325,8 +324,7 @@ const App = () => {
                 <span className="text-[#F2F4CB]">Hi! I'm</span> <span className="text-[#F2F4CB] font-bold">Frank</span>
               </h1>
               <p className="text-gray-400 text-lg text-left mb-8">
-                not a graphic designer, not a professional,<br />
-                just a vibe programmer.
+                Aspiring IT professional seeking an internship.
               </p>
               <motion.div 
                 className="flex space-x-4"
