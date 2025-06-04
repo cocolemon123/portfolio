@@ -8,7 +8,7 @@ const AboutMe = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        classNamegiive="max-w-4xl w-full"
+        className="max-w-4xl w-full"
       >
         {/* About Me Content */}
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 mb-16">
