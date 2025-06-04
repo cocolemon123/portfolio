@@ -25,7 +25,7 @@ const AboutMe = () => {
               
               <p className="text-lg">
                 I'm a problem solver who loves bringing ideas to life through coding. 
-                I call my approach vibe coding—I come up with the concepts, and I use AI 
+                I call my approach iterative prompting—I come up with the concepts, and I use AI 
                 to help make them a reality. While I have a good understanding of various 
                 programming languages, I focus more on creativity and efficiency rather 
                 than memorizing every detail. My goal is to produce results quickly 
